@@ -64,7 +64,7 @@ export default function Home(){
         <main>
         <header className="home-header">     
             <ul>
-                <h1>Wanna know about:</h1>
+                <h1>Click to know about:</h1>
                 <li>
                     <Link to="content/sports">sports</Link>
                 </li>
