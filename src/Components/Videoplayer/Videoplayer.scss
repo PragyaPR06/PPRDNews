@@ -1,0 +1,12 @@
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: -1; /* To position it behind other content */
+  }
+  
+  video {
+    object-fit:cover; /* Ensure the video covers the entire container */
+  }
+  
