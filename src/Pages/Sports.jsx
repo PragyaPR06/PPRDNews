@@ -58,7 +58,7 @@ function Sports() {
           <div className="nav-links">
             <ul className="nav-content">
             <li
-                className={`hover-link nav-item ${curSelectedNav === "Culture" ? "active" : ""}`}
+                className={`hover-link nav-item ${curSelectedNav === "culture" ? "active" : ""}`}
                 id="culture"
                 onClick={() => onNavItemClick('culture')}
               >
@@ -72,21 +72,21 @@ function Sports() {
                 Finance
               </li>
               <li
-                className={`hover-link nav-item ${curSelectedNav === "" ? "active" : ""}`}
+                className={`hover-link nav-item ${curSelectedNav === "sports" ? "active" : ""}`}
                 id="sports"
                 onClick={() => onNavItemClick('sports')}
               >
                 Sports
               </li>
               <li
-                className={`hover-link nav-item ${curSelectedNav === "" ? "active" : ""}`}
+                className={`hover-link nav-item ${curSelectedNav === "electronics" ? "active" : ""}`}
                 id="electronics"
                 onClick={() => onNavItemClick('electronics')}
               >
                 Electronics
               </li>
               <li
-                className={`hover-link nav-item ${curSelectedNav === "" ? "active" : ""}`}
+                className={`hover-link nav-item ${curSelectedNav === "politics" ? "active" : ""}`}
                 id="politics"
                 onClick={() => onNavItemClick('politics')}
               >
