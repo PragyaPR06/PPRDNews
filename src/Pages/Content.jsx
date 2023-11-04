@@ -81,7 +81,7 @@ function Content() {
                 Sports
               </li>
               <li
-                className={`hover-link nav-item ${curSelectedNav === "sports" ? "active" : ""}`}
+                className={`hover-link nav-item ${curSelectedNav === "electronics" ? "active" : ""}`}
                 id="electronics"
                 onClick={() => onNavItemClick('electronics')}
               >
