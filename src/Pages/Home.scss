@@ -433,6 +433,11 @@
         }
 
     }
+    #AboutUs.About-us.About-us-content h1,p{
+        &:hover{
+            text-shadow: 0 0 40px linen;
+        }
+    }
     #AboutUs{
         .About-us{
             display: flex;

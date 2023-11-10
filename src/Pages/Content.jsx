@@ -1,11 +1,10 @@
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import './Content.scss';
 import VideoPlayer from '../Components/Videoplayer/Videoplayer';
 import NewsCard from '../Components/Header/NewsCard';
 import logo from './logo.png';
 
-const API_KEY = "5643f86cadb046fba67d7fbfaf974c81";
-const url = "https://newsapi.org/v2/everything?q=";
+const url = "https://saurav.tech/NewsAPI/top-headlines/category/";
 
 function Content() {
   const [articles, setArticles] = useState([]);
@@ -14,37 +13,47 @@ function Content() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetchNews("India");
+    fetchNews("general");
   }, []);
+
 
   async function fetchNews(query) {
     setLoading(true);
-    const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+    const res = await fetch(`${url}${query}/in.json`);
     const data = await res.json();
     setArticles(data.articles);
     setLoading(false);
   }
 
+  const filteredData = (data, searchText) => {
+    const filtered = data.filter((item) => {
+      if (searchText.trim() === "") return true;
+      const lower = searchText.toLowerCase();
+      const article = item?.title?.toLowerCase();
+      return article?.includes(lower);
+    });
+    return filtered;
+  }
+
   function onNavItemClick(id) {
     fetchNews(id);
-    setCurSelectedNav(id);
+    setCurSelectedNav(id); // styling using the active class
   }
 
-  function handleSearch() {  
-    if (searchText) {
-      fetchNews(searchText);
+  function handleSearch() {
+    if(searchText){
       setCurSelectedNav(null);
+      const filteredNews = filteredData(articles, searchText);
+      setArticles(filteredNews);
     }
-
   }
-  
-  
+
   function handleClick(url) {
     window.open(url, '_blank');
   }
 
-  function handleEnterKey(e){
-    if(e.key === "Enter"){
+  function handleEnterKey(e) {
+    if (e.key === "Enter") {
       handleSearch();
     }
   }
@@ -60,18 +69,18 @@ function Content() {
           <div className="nav-links">
             <ul className="nav-content">
               <li
-                className={`hover-link nav-item ${curSelectedNav === "culture" ? "active" : ""}`}
-                id="culture"
-                onClick={() => onNavItemClick('culture')}
+                className={`hover-link nav-item ${curSelectedNav === "business" ? "active" : ""}`}
+                id="business"
+                onClick={() => onNavItemClick('business')}
               >
-                Culture
+                Business
               </li>
               <li
-                className={`hover-link nav-item ${curSelectedNav === "finance" ? "active" : ""}`}
-                id="finance"
-                onClick={() => onNavItemClick('finance')}
+                className={`hover-link nav-item ${curSelectedNav === "technology" ? "active" : ""}`}
+                id="technology"
+                onClick={() => onNavItemClick('technology')}
               >
-                Finance
+                Technology
               </li>
               <li
                 className={`hover-link nav-item ${curSelectedNav === "sports" ? "active" : ""}`}
@@ -81,18 +90,18 @@ function Content() {
                 Sports
               </li>
               <li
-                className={`hover-link nav-item ${curSelectedNav === "electronics" ? "active" : ""}`}
-                id="electronics"
-                onClick={() => onNavItemClick('electronics')}
+                className={`hover-link nav-item ${curSelectedNav === "entertainment" ? "active" : ""}`}
+                id="entertainment"
+                onClick={() => onNavItemClick('entertainment')}
               >
-                Electronics
+                Entertainment
               </li>
               <li
-                className={`hover-link nav-item ${curSelectedNav === "politics" ? "active" : ""}`}
-                id="politics"
-                onClick={() => onNavItemClick('politics')}
+                className={`hover-link nav-item ${curSelectedNav === "health" ? "active" : ""}`}
+                id="health"
+                onClick={() => onNavItemClick('health')}
               >
-                Politics
+                Health
               </li>
             </ul>
           </div>
@@ -103,8 +112,7 @@ function Content() {
               className="news-input"
               placeholder="Type here..."
               value={searchText}
-              onChange={(e) => setSearchText(e.target.value)
-              }
+              onChange={(e) => setSearchText(e.target.value)}
               onKeyDown={handleEnterKey}
             />
             <button

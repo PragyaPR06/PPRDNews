@@ -1,5 +1,5 @@
 import'./NewsCard.scss';
-export default function NewsCard({ article }) {
+ function NewsCard({article}) {
     return (
       <div className="card">
         <div className="card-header">
@@ -13,3 +13,4 @@ export default function NewsCard({ article }) {
       </div>
     );
   }
+  export default NewsCard;
