@@ -200,7 +200,7 @@ main {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding-top:5vw;
+  padding-top:12.5vw;
   #cards-container {
     padding: 2vw;
     display: flex;
@@ -218,6 +218,9 @@ main {
       }
     }
     .loading-spinner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 20vw;
       height: 100vh;
       font-size: 5vw;
