@@ -2,7 +2,7 @@ import { BrowserRouter,Routes, Route} from 'react-router-dom';
 import Content from './Pages/Content';
 // import Navbar from './Components/Navbar';
 import Home from './Pages/Home';
-import Culture from './Pages/Culture';
+import Business from './Pages/Business';
 import Sports from './Pages/Sports';
 import Politics from './Pages/Politics';
 import Celebrity from './Pages/Celebrity';
@@ -15,7 +15,7 @@ return(
     <Routes>
       <Route exact path='/' element={<Home />} />
       <Route exact path='/content' element={<Content />} />
-      <Route exact path='/content/culture' element={<Culture/>} />
+      <Route exact path='/content/culture' element={<Business/>} />
       <Route exact path='/content/sports' element={<Sports/>} />
       <Route exact path='/content/politics' element={<Politics/>} />
       <Route exact path='/content/celebrity' element={<Celebrity/>} />

@@ -4,6 +4,8 @@
         display: none;
       }
 }
+
+//<-------------------------------------------------------- Large Screen View--------------------------------------------------------->
 @media screen and (min-width:660px) {
 .home-container{
     position: relative;
@@ -101,6 +103,7 @@
         padding:10vw 5vw;
             li{
                 list-style: none;
+                font-size: 3vw;
                 a{
                     text-decoration:none;
                     font-size: 3vw;
@@ -115,6 +118,8 @@
     .home-main-content{
         display: flex;
         justify-items: center;
+        align-items: center;
+        text-align: center;
         gap:10vw;
         width: 40vw;
             .front-photo{
@@ -265,6 +270,9 @@
         }    
     }
 }
+
+
+//<-------------------------------------------------------- Small Screen View--------------------------------------------------------->
 @media screen and (max-width:659.9px) {
 .home-container{
     position: relative;

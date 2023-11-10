@@ -7,14 +7,14 @@ import logo from './logo.png';
 const API_KEY = "5643f86cadb046fba67d7fbfaf974c81";
 const url = "https://newsapi.org/v2/everything?q=";
 
-function Culture() {
+function business() {
   const [articles, setArticles] = useState([]);
   const [curSelectedNav, setCurSelectedNav] = useState(null);
   const [searchText, setSearchText] = useState("");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetchNews("Culture");
+    fetchNews("Business");
   }, []);
 
   async function fetchNews(query) {
@@ -58,11 +58,11 @@ function Culture() {
           <div className="nav-links">
           <ul className="nav-content">
             <li
-                className={`hover-link nav-item ${curSelectedNav === "culture" ? "active" : ""}`}
-                id="culture"
-                onClick={() => onNavItemClick('culture')}
+                className={`hover-link nav-item ${curSelectedNav === "business" ? "active" : ""}`}
+                id="business"
+                onClick={() => onNavItemClick('business')}
               >
-                Culture
+                business
               </li>
               <li
                 className={`hover-link nav-item ${curSelectedNav === "finance" ? "active" : ""}`}
@@ -147,4 +147,4 @@ function Culture() {
 }
 
 
-export default Culture;
+export default business;

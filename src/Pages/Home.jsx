@@ -65,11 +65,11 @@ export default function Home(){
         <header className="home-header">     
             <ul>
                 <h1>Click to know about:</h1>
-                <li>
+                {/* <li>
                     <Link to="content/sports">sports</Link>
                 </li>
                 <li>
-                    <Link to="content/culture" >culture</Link>
+                    <Link to="content/culture" >business</Link>
                 </li>
                 <li>
                     <Link to="content/politics">politics</Link>
@@ -79,13 +79,19 @@ export default function Home(){
                 </li>
                 <li>
                     <Link to="content/education">education</Link>
+                </li> */}
+                <li>
+                    OPTIONS
+                    COMING SOON
                 </li>
             </ul>
         </header>
             <div className="home-main-content">
                 <div className="front-photo">
+                    <Link to="/content">
                     <img src={logo} alt="logo"></img>
-                    <Link to="/content">Let's Dive in...</Link>
+                    Let's Dive in...
+                    </Link>
                 </div>
             </div>
         </main>
